@@ -1,0 +1,60 @@
+-- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
+--
+-- Host: 144.24.92.25    Database: groupware
+-- ------------------------------------------------------
+-- Server version	8.0.34
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `attendance`
+--
+
+DROP TABLE IF EXISTS `attendance`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `attendance` (
+  `AttendanceID` int NOT NULL AUTO_INCREMENT,
+  `userid` varchar(32) DEFAULT NULL,
+  `Date` date DEFAULT NULL,
+  `StartTime` time DEFAULT NULL,
+  `EndTime` time DEFAULT '00:00:00',
+  `AttendanceStatus` varchar(50) DEFAULT NULL,
+  `OvertimeHours` int DEFAULT NULL,
+  `VacationType` varchar(50) DEFAULT NULL,
+  `Remarks` text,
+  PRIMARY KEY (`AttendanceID`),
+  KEY `userid` (`userid`),
+  CONSTRAINT `attendance_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `employees` (`Userid`)
+) ENGINE=InnoDB AUTO_INCREMENT=138 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `attendance`
+--
+
+LOCK TABLES `attendance` WRITE;
+/*!40000 ALTER TABLE `attendance` DISABLE KEYS */;
+INSERT INTO `attendance` VALUES (71,'0001','2023-10-11','08:45:00','18:45:00','정상출근/정상퇴근',NULL,NULL,NULL),(72,'0001','2023-10-12','08:30:00','18:20:00','정상출근/정상퇴근',NULL,NULL,NULL),(74,'0001','2023-10-14','08:40:00','18:15:00','정상출근/정상퇴근',NULL,NULL,NULL),(75,'0001','2023-10-15','08:20:00','18:40:00','정상출근/정상퇴근',NULL,NULL,NULL),(77,'0001','2023-10-17','08:25:00','18:50:00','정상출근/정상퇴근',NULL,NULL,NULL),(84,'0001','2023-10-18','12:17:53','12:49:50','지각/조퇴',NULL,NULL,NULL),(85,'0003','2023-10-12','08:30:00','18:20:00','정상출근/정상퇴근',NULL,NULL,NULL),(86,'0003','2023-10-13','08:55:00','18:30:00','정상출근/정상퇴근',NULL,NULL,NULL),(87,'0003','2023-10-14','08:40:00','18:15:00','정상출근/정상퇴근',NULL,NULL,NULL),(88,'0003','2023-10-15','08:20:00','18:40:00','정상출근/정상퇴근',NULL,NULL,NULL),(89,'0003','2023-10-16','08:15:00','18:30:00','정상출근/정상퇴근',NULL,NULL,NULL),(90,'0003','2023-10-17','08:25:00','18:50:00','정상출근/정상퇴근',NULL,NULL,NULL),(91,'0003','2023-10-18','08:10:00','18:40:00','정상출근/정상퇴근',NULL,NULL,NULL),(92,'hwan','2023-10-12','08:30:00','18:20:00','정상출근/정상퇴근',NULL,NULL,NULL),(93,'hwan','2023-10-13','08:55:00','18:30:00','정상출근/정상퇴근',NULL,NULL,NULL),(94,'hwan','2023-10-14','08:40:00','18:15:00','정상출근/정상퇴근',NULL,NULL,NULL),(95,'hwan','2023-10-15','08:20:00','18:40:00','정상출근/정상퇴근',NULL,NULL,NULL),(96,'hwan','2023-10-16','08:15:00','18:30:00','정상출근/정상퇴근',NULL,NULL,NULL),(97,'0004','2023-10-17','08:25:00','18:50:00','정상출근/정상퇴근',NULL,NULL,NULL),(98,'0004','2023-10-16','08:15:00','18:30:00','정상출근/정상퇴근',NULL,NULL,NULL),(99,'0004','2023-10-15','08:20:00','18:40:00','정상출근/정상퇴근',NULL,NULL,NULL),(100,'0004','2023-10-14','08:40:00','18:15:00','정상출근/정상퇴근',NULL,NULL,NULL),(101,'0004','2023-10-13','08:55:00','18:30:00','정상출근/정상퇴근',NULL,NULL,NULL),(102,'0004','2023-10-12','08:30:00','18:20:00','정상출근/정상퇴근',NULL,NULL,NULL),(105,'1010','2023-10-12','08:30:00','18:20:00','정상출근/정상퇴근',NULL,NULL,NULL),(106,'1010','2023-10-13','08:55:00','18:30:00','정상출근/정상퇴근',NULL,NULL,NULL),(107,'1010','2023-10-14','08:40:00','18:15:00','정상출근/정상퇴근',NULL,NULL,NULL),(108,'1010','2023-10-15','08:20:00','18:40:00','정상출근/정상퇴근',NULL,NULL,NULL),(109,'1010','2023-10-16','08:15:00','18:30:00','정상출근/정상퇴근',NULL,NULL,NULL),(110,'1010','2023-10-17','08:25:00','18:50:00','정상출근/정상퇴근',NULL,NULL,NULL),(111,'1010','2023-10-18','08:10:00','18:40:00','정상출근/정상퇴근',NULL,NULL,NULL),(112,'0008','2023-10-12','08:30:00','18:20:00','정상출근/정상퇴근',NULL,NULL,NULL),(113,'0008','2023-10-13','08:55:00','18:30:00','정상출근/정상퇴근',NULL,NULL,NULL),(114,'0008','2023-10-14','08:40:00','18:15:00','정상출근/정상퇴근',NULL,NULL,NULL),(115,'5555','2023-10-12','08:30:00','18:20:00','정상출근/정상퇴근',NULL,NULL,NULL),(116,'5555','2023-10-13','08:55:00','18:30:00','정상출근/정상퇴근',NULL,NULL,NULL),(117,'5555','2023-10-14','08:40:00','18:15:00','정상출근/정상퇴근',NULL,NULL,NULL),(118,'5555','2023-10-15','08:20:00','18:40:00','정상출근/정상퇴근',NULL,NULL,NULL),(119,'관리자1','2023-10-19','12:37:21','12:37:25','지각/조퇴',NULL,NULL,NULL),(120,'0001','2023-10-19','12:39:32','12:39:35','지각/조퇴',NULL,NULL,NULL),(121,'0001','2023-10-20','11:45:16','11:48:59','지각/조퇴',NULL,NULL,NULL),(122,'0001','2023-10-22','20:17:18','20:17:23','정상출근/정상퇴근',NULL,NULL,NULL),(123,'관리자1','2023-10-25','16:09:46','00:00:00','지각',NULL,NULL,NULL),(124,'관리자1','2023-10-26','15:25:04','15:25:07','지각/조퇴',NULL,NULL,NULL),(125,'관리자1','2023-10-30','17:35:20','17:35:23','지각/조퇴',NULL,NULL,NULL),(126,'관리자1','2023-11-09','02:38:35','18:20:41','정상출근/정상퇴근',NULL,NULL,NULL),(127,'관리자1','2023-11-13','16:25:39','16:25:47','지각/조퇴',NULL,NULL,NULL),(128,'0001','2023-12-07','17:36:31','00:00:00','지각',NULL,NULL,NULL),(129,'관리자1','2024-01-09','15:14:34','00:00:00','지각',NULL,NULL,NULL),(130,'관리자1','2024-01-12','17:43:07','00:00:00','지각',NULL,NULL,NULL),(131,'관리자1','2024-01-15','16:01:01','16:01:06','지각/조퇴',NULL,NULL,NULL),(132,'관리자1','2024-01-22','16:45:03','00:00:00','지각',NULL,NULL,NULL),(133,'관리자1','2024-01-26','15:35:20','15:55:21','지각/조퇴',NULL,NULL,NULL),(134,'관리자1','2024-01-30','18:11:49','18:12:07','정상출근/정상퇴근',NULL,NULL,NULL),(135,'관리자1','2024-02-02','15:11:21','00:00:00','지각',NULL,NULL,NULL),(136,'관리자1','2024-02-05','14:43:05','00:00:00','지각',NULL,NULL,NULL),(137,'관리자1','2024-02-06','14:26:24','14:26:32','지각/조퇴',NULL,NULL,NULL);
+/*!40000 ALTER TABLE `attendance` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2024-05-21 12:22:57
